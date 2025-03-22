@@ -1,34 +1,44 @@
-const display = document.getElementById('Countries');
-const btn = document.getElementById('btn');
-const box = document.querySelector('.form_validation');
-const show_result = document.getElementById('display');
-btn.addEventListener('click',()=>{
-    
-    
-    if(display.value == 1){
-        show_result.innerText = "Visa required for most applicants.";
-        show_result.style.color = "green";
-    }
-    if(display.value == 2){
-        show_result.innerText = "Visa required unless you have an eTA.";
-        show_result.style.color = "green";
-    }
-    if(display.value == 3){
-        show_result.innerText = "Visa required before travel.";
-        show_result.style.color = "green";
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    const selectBox = document.getElementById('Countries');
+    const button = document.getElementById('btn');
+    const resultDisplay = document.getElementById('display');
 
-    if(display.value == 4){
-        show_result.innerText = "Visa depends on the duration of stay..";
-        show_result.style.color = "green";
-    }
-    if(display.value == 5){
-        show_result.innerText = "eVisa available for eligible travelers.";
-        show_result.style.color = "green";
-    }
-    if(display.value == 6){
-        show_result.innerText = "Please select a country.";
-        show_result.style.color = "red";
-    }
-    
-})
+    // GSAP Intro Animation
+    gsap.from(".form_validation", { duration: 1, opacity: 0, scale: 0.8, ease: "back.out(1.7)" });
+
+    button.addEventListener("click", () => {
+        let message = "";
+        let color = "green";
+
+        switch (selectBox.value) {
+            case "1":
+                message = "Visa required for most applicants.";
+                break;
+            case "2":
+                message = "Visa required unless you have an eTA.";
+                break;
+            case "3":
+                message = "Visa required before travel.";
+                break;
+            case "4":
+                message = "Visa depends on the duration of stay.";
+                break;
+            case "5":
+                message = "eVisa available for eligible travelers.";
+                break;
+            case "6":
+                message = "Please select a valid country.";
+                color = "red";
+                break;
+            default:
+                message = "Invalid selection.";
+                color = "red";
+        }
+
+        resultDisplay.innerText = message;
+        resultDisplay.style.color = color;
+
+        // GSAP Animation for Result Display
+        gsap.to(resultDisplay, { opacity: 1, y: 10, duration: 0.5, ease: "power1.out" });
+    });
+});
