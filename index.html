@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visa Status Checker</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visa Status Checker</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="form_validation">
+      <h2>VISA STATUS CHECKER</h2>
+      <h4>Select Your Country:</h4>
+      <select name="Countries" id="Countries">
+          <option value="1">USA</option>
+          <option value="2">Canada</option>
+          <option value="3">India</option>
+          <option value="4">UK</option>
+          <option value="5">Australia</option>
+          <option value="6">Others</option>
+      </select>
+      <button id="btn">Check Status</button>
+      <h1 id="display" class="hidden"></h1>
+  </div>
 
-    <div class="form_validation">
-        <h2>VISA STATUS CHECKER</h2>
-        <h4>Select Your Country:</h4>
-        <select name="Countries" id="Countries">
-            <option value="1">USA</option>
-            <option value="2">Canada</option>
-            <option value="3">India</option>
-            <option value="4">UK</option>
-            <option value="5">Australia</option>
-            <option value="6">Others</option>
-        </select>
-        <button id="btn">Check Status</button>
-        <h1 id="display"></h1>
-    </div>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
