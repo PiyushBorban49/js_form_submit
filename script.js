@@ -3,9 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const button = document.getElementById('btn');
     const resultDisplay = document.getElementById('display');
 
-    // GSAP Intro Animation
-    gsap.from(".form_validation", { duration: 1, opacity: 0, scale: 0.8, ease: "back.out(1.7)" });
-
     button.addEventListener("click", () => {
         let message = "";
         let color = "green";
@@ -38,7 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
         resultDisplay.innerText = message;
         resultDisplay.style.color = color;
 
-        // GSAP Animation for Result Display
-        gsap.to(resultDisplay, { opacity: 1, y: 10, duration: 0.5, ease: "power1.out" });
+        // Remove hidden class and add visible class for smooth transition
+        resultDisplay.classList.remove("hidden");
+        resultDisplay.classList.add("visible");
     });
 });
